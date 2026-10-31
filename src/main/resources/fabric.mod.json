@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "ikun",
+  "version": "${version}",
+  "name": "ikun",
+  "description": "Kuudra party stats, requirement checks, AutoGFS, Auto Cannon Close, Supply Swap, Pearl Supply Interact, Rend Rotate and a customizable Kuudra shop with a configuration GUI.",
+  "authors": ["CuteCup"],
+  "contributors": ["Noamm (original GUI)", "Odin contributors (party parsing)", "RatTokens (Rend rotation)"],
+  "license": "GPL-3.0-only",
+  "environment": "client",
+  "mixins": ["ikun.mixins.json"],
+  "entrypoints": {
+    "client": [{"value": "com.github.ikun.Ikun", "adapter": "kotlin"}],
+    "modmenu": ["com.github.ikun.ui.clickgui.ModMenuIntegration"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "26.1.2",
+    "java": ">=25",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*"
+  }
+}

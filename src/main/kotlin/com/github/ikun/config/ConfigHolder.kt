@@ -1,0 +1,21 @@
+package com.github.ikun.config
+
+import com.github.ikun.Ikun
+
+abstract class ConfigHolder<T>(val name: String, val defaultValue: T) {
+    var jsonName = name
+    var description: String? = null
+    var section: String? = null
+    var visibility: () -> Boolean = { true }
+    var changeListener: ((T) -> Unit)? = null
+
+    var value: T = defaultValue
+        set(value) {
+            field = value
+            if (Ikun.isLoaded) {
+                changeListener?.invoke(value)
+            }
+        }
+
+    open fun reset() = ::value.set(defaultValue)
+}

@@ -1,0 +1,25 @@
+# Gradle and Kotlin caches
+.gradle/
+.kotlin/
+
+# Build output and local game files
+build/
+run/
+logs/
+/config/
+crash-reports/
+*.log
+
+# Editor and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local environment and Python cache
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
